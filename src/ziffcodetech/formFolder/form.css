@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* background-color: #120f0f; */
+}
+
+.formpageDiv{
+    background-color: rgb(233, 241, 238);
+    margin-top: 3%;
+}
+
+.formpage{
+    height: 100vh;
+    background-color: rgb(4, 26, 4);
+    color: rgb(169, 155, 155);
+    margin: auto;
+    width: 83%;
+}

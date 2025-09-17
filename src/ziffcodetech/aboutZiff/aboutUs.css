@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* background-color: #120f0f; */
+}
+
+.classroomImages{
+    width: 100%;
+}
+
+.codingToday{
+    width: 90%;
+    height: 30vh;
+    top: 110%;
+    left: 50%;
+    border-radius: 16px;
+    box-shadow: inset -9px 8px 15px rgba(0,0,0,.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(18, 47, 98);
+    color: goldenrod;
+    transform: translate(-50%,-50%)
+}
+
+.ourFocusComponentMargin{
+    margin-top: 11.5rem; 
+    margin-bottom: 5rem;
+}
+
+.cardBodyMorphoric{
+    box-shadow: 5px 5px 10px #babecc,
+    -5px -5px 10px #fff;
+}
+
+.slogan{
+    background-color: rgb(248, 246, 246);
+}
+.vision{
+    background-color: rgb(175, 175, 51);
+}
+
+.mission{
+    background-color: hsl(60, 22%, 96%);
+}
+
+@media (min-width:768px) {
+    .codingToday{
+    height: 20vh;
+    width: 60%;
+}
+
+.ourFocusComponentMargin{
+    margin-top: 13rem; 
+    margin-bottom: 5%;
+}
+}
+@media (max-width:320px) {
+    .codingToday{
+    width: 90%;
+    height: 50vh; 
+    top: 100%;
+}
+
+
+}
