@@ -11,9 +11,9 @@ const FooterComp = () => {
                             <img src={ziffofficeLogo} alt="ziffofficeLogo" className="
                             footerLogo" />
                         </figure>
-                        <p className="text-lighter">32/34 Centre Point/Dominion Ways, High School,</p>
-                        <p className="">Paradise B/Stop, Ikotun-Idimu Road , IKotun, Lagos</p>
-                        <p>+234 8032 6829 45</p>
+                        <p className="text-lighter">Suit 49, 26 Ikotun-Idimu Road, Kasam Plaza,</p>
+                        <p className="">College B/Stop, IKotun, Lagos</p>
+                        <p>+2348032682945</p>
                         <p>09121838990</p>
                         <p className="mb-3"> wwww.ziffcode.com.ng</p>
                         <p className="border-bottom border-danger border-2 mt-2"></p>
