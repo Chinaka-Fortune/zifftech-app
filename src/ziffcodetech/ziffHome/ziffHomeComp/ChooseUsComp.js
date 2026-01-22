@@ -2,7 +2,7 @@ import React from "react";
 
 const ChooseUsComp = () =>{
     return(
-        <div className="container-fliud px-3 mx-lg-5  text-muted mt-5">
+        <div className="container-fliud px-3 mx-lg-5 mt-5">
             <div className="col-md-9">
                 <h3 className="text-center fw-bolder">Why choose us?</h3>
             <p><span className="boldText">Expert Team:</span> Our team comprises highly skilled professionals with extensive experience in their respective fields. We are passionate about technology and dedicated to continuous learning and improvement.</p>

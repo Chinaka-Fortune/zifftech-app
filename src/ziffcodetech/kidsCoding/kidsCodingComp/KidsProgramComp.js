@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 
 const KidsProgramComp = () => {
   return (
-    <div className="container-fluid text-start mb-3 mx-auto  text-primary-emphasis mt-3">
+    <div className="container-fluid text-start mb-3 mx-auto mt-3">
       <div className="row m-auto  px-md-3 row-gap-4 ">
         <div className="col-lg-4 col-sm-6 cardBodyMorphoric">
           <figure className="">

@@ -8,7 +8,7 @@ const CodingpracComp = () => {
             <div className=" whyKidsCodingDiv d-flex align-items-center ps-md-5 ps-2 text-white ">
                 <h1 className="fw-bolder fs-1 display-1 shadow-lg">Your Child Starting Coding Early, <br/> The Best Choice You Would Be Making</h1>
             </div>
-            <div className="container-fluid text-primary-emphasis ">
+            <div className="container-fluid">
                 <div className="row">
                    
                     <div className="col">

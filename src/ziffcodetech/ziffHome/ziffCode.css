@@ -80,6 +80,18 @@
     box-shadow: var(--shadow-lg);
 }
 
+@media (max-width: 768px) {
+    .training {
+        width: 100%;
+        height: auto;
+    }
+
+    .trainingImageDiv {
+        height: auto;
+        padding: 1rem 0;
+    }
+}
+
 
 .w-100 {
     background-color: var(--primary-dark);
