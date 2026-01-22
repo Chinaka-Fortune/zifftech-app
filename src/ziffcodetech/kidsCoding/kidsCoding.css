@@ -1,92 +1,85 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    /* background-color: #120f0f; */
-}
+/* Global reset is now in index.css */
 
-/* .codingblackBoy{
-    width: 100%;
-    height: 100%;   
-/* } */
-
-/* .codingblackBoyDiv{
-    border: 2px solid red;
-    width: 100%;
-    height: 90vh;
-}
-.codingblackBoyDiv .codingblackBoy{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}  */
-
-.whyKidsCodingDiv{
+.whyKidsCodingDiv {
     background-image: url('../kidsCoding//kidsCodingImages/codingblackBoy.jpg');
     width: 100%;
     height: 100vh;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    position: relative;
 }
 
-.testingMedia{
-    padding: 0 1rem;
+/* Add overlay to improve text readability on image if needed later */
+.whyKidsCodingDiv::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 0;
 }
 
-@media (min-width:768px) {
-    .testingMedia{
+.whyKidsCodingDiv>* {
+    position: relative;
+    z-index: 1;
+}
+
+.testingMedia {
+    padding: 0 var(--spacing-sm);
+}
+
+@media (min-width: 768px) {
+    .testingMedia {
         padding: 0 7rem;
     }
 }
 
-.whyKidsCodingDiv
-
-.cardBodyMorphoric{
-    box-shadow: 5px 5px 10px #babecc,
-    -5px -5px 10px #fff;
+.cardBodyMorphoric {
+    background-color: var(--background-card);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    padding: var(--spacing-md);
+    color: var(--text-main);
+    transition: transform 0.3s ease;
 }
 
-.theboysPrac{
+.cardBodyMorphoric:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.theboysPrac {
     width: 100%;
     height: 13rem;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
 }
 
-
-.boldText{
-    font-weight: bold;
+.boldText {
+    font-weight: 700;
+    color: var(--secondary-color);
 }
 
-.blackBoyTwo{
+.blackBoyTwo {
     width: 100%;
     height: 12rem;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
 }
 
-.teenageCoding{
+.teenageCoding {
     width: 100%;
     height: 12.5rem;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
 }
 
-.kidsIntheClass{
-    width: 100vh;
+.kidsIntheClass {
+    width: 100%;
     height: 70vh;
     object-fit: cover;
     object-position: center;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

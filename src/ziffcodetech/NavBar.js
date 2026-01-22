@@ -10,10 +10,10 @@ const NavBar = () => {
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                <div className="ziffcodeLogoDiv navbar-brand d-flex">
-                    <img src={ziffcodeLogo} className=""
+                <div className="ziffcodeLogoDiv navbar-brand d-flex align-items-center">
+                    <img src={ziffcodeLogo} className="logoImage"
                         alt="ziffcodeLogo" />
-                    <p className="text-primary-emphasis fw-bold fs-5 pt-4">ZIFFCODE</p>
+                    <p className="text-primary-emphasis fw-bold fs-5 mb-0">ZIFFCODE</p>
                 </div>
             
                 <div className="collapse navbar-collapse text-primary-emphasis" id="navbarTogglerDemo03">
@@ -26,6 +26,9 @@ const NavBar = () => {
                         </li>
                         <li className="nav-item px-3">
                             <NavLink className="text-decoration-none LiNavLink" to='/ourService' >Our Services</NavLink>
+                        </li>
+                        <li className="nav-item ps-3">
+                            <NavLink className="text-decoration-none LiNavLink" to='/contact'>Contact Us</NavLink>
                         </li>
                         <li className="nav-item px-3">
                             <NavLink className="text-decoration-none LiNavLink" to='/training'>Ziffcode Training</NavLink>

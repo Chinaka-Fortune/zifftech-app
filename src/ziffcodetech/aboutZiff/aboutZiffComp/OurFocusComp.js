@@ -3,8 +3,8 @@ import "../aboutUs.css"
 
 const OurFocusComp = () =>{
     return(
-        <div className="container text-muted ourFocusComponentMargin">
-            <h2 className="text-center fw-bold pt-3 text-secondary-emphasis">Unlock the Future with Ziffcode Technologies
+        <div className="container ourFocusComponentMargin">
+            <h2 className="text-center fw-bold pt-3">Unlock the Future with Ziffcode Technologies
             </h2>
             <p className="mx-3">
                 At Ziffcode Technologies LTD, we are passionate about driving progress and empowering our clients to thrive in the digital age. As a leading software development and training company, we combine cutting-edge technology, unparalleled expertise, and a relentless commitment to excellence to deliver transformative solutions that propel businesses and individuals forward.

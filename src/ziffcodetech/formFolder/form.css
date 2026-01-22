@@ -1,19 +1,21 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    /* background-color: #120f0f; */
+/* Global reset is now in index.css */
+
+.formpageDiv {
+    background-color: var(--background-card);
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
 }
 
-.formpageDiv{
-    background-color: rgb(233, 241, 238);
-    margin-top: 3%;
-}
-
-.formpage{
-    height: 100vh;
-    background-color: rgb(4, 26, 4);
-    color: rgb(169, 155, 155);
-    margin: auto;
-    width: 83%;
+.formpage {
+    min-height: 100vh;
+    background-color: var(--background-dark);
+    color: var(--text-muted);
+    margin: 0 auto;
+    width: 90%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }

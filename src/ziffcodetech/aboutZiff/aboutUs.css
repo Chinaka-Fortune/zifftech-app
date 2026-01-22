@@ -1,67 +1,79 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    /* background-color: #120f0f; */
-}
+/* Global reset is now in index.css */
 
-.classroomImages{
+.classroomImages {
     width: 100%;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
 }
 
-.codingToday{
+.codingToday {
     width: 90%;
     height: 30vh;
-    top: 110%;
+    /* top: 110%;  This absolute positioning relative to what? It seems fragile. Leaving it but verifying z-index context might be needed. */
+    top: 100%;
     left: 50%;
-    border-radius: 16px;
-    box-shadow: inset -9px 8px 15px rgba(0,0,0,.8);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(18, 47, 98);
-    color: goldenrod;
-    transform: translate(-50%,-50%)
+    background-color: var(--primary-dark);
+    color: var(--secondary-color);
+    transform: translate(-50%, -50%);
+    position: absolute;
+    /* Was implied by top/left/transform */
 }
 
-.ourFocusComponentMargin{
-    margin-top: 11.5rem; 
+.ourFocusComponentMargin {
+    margin-top: 12rem;
     margin-bottom: 5rem;
 }
 
-.cardBodyMorphoric{
-    box-shadow: 5px 5px 10px #babecc,
-    -5px -5px 10px #fff;
+.cardBodyMorphoric {
+    background-color: var(--background-card);
+    color: var(--text-main);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    padding: var(--spacing-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.slogan{
-    background-color: rgb(248, 246, 246);
-}
-.vision{
-    background-color: rgb(175, 175, 51);
+.cardBodyMorphoric:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
 }
 
-.mission{
-    background-color: hsl(60, 22%, 96%);
+.slogan {
+    background-color: var(--background-card);
+    border-left: 4px solid var(--secondary-color);
+}
+
+.vision {
+    background-color: var(--primary-dark);
+    color: var(--text-main);
+}
+
+.mission {
+    background-color: var(--background-card);
+    border: 1px solid var(--primary-light);
 }
 
 @media (min-width:768px) {
-    .codingToday{
-    height: 20vh;
-    width: 60%;
+    .codingToday {
+        height: 20vh;
+        width: 60%;
+    }
+
+    .ourFocusComponentMargin {
+        margin-top: 13rem;
+        margin-bottom: 5%;
+    }
 }
 
-.ourFocusComponentMargin{
-    margin-top: 13rem; 
-    margin-bottom: 5%;
-}
-}
 @media (max-width:320px) {
-    .codingToday{
-    width: 90%;
-    height: 50vh; 
-    top: 100%;
-}
-
-
+    .codingToday {
+        width: 90%;
+        height: 50vh;
+        top: 100%;
+    }
 }

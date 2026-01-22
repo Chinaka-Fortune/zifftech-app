@@ -7,7 +7,9 @@ import KiddiesCoding from "./ziffcodetech/kidsCoding/KiddiesCoding";
 import NavBar from "./ziffcodetech/NavBar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import FooterComp from "./ziffcodetech/FooterComp";
+// import FooterComp from "./ziffcodetech/FooterComp";
 import LogIn from "./ziffcodetech/formFolder/LogIn";
+import ContactUs from "./ziffcodetech/contactUs/ContactUs";
 
 const App = () => {
   return (
@@ -19,7 +21,9 @@ const App = () => {
       <Route path="/about" Component={AboutUs}/>
       <Route path="/logIn" Component={LogIn}/>
       <Route path="/ourService" Component={OurService} />
+      <Route path="/contact" Component={ContactUs} />
       <Route path="/training" Component={ZiffAcademy} />
+      {/* <Route path="/training" Component={ZiffAcademy} /> */}
       <Route path="/kidsCoding" Component={KiddiesCoding} />
     </Routes >
     <FooterComp />

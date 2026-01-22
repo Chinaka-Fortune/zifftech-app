@@ -1,137 +1,143 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    /* background-color: #120f0f; */
-}
+/* Global reset is now in index.css */
 
-/* .NavbarBackgroundColor{ 
-    background-color: rgb(18, 34, 43);
-    height: 100%;
-} */
-
-.ziffcodeLogoDiv{
-    width: 10rem;
-    height: 4rem;
+.ziffcodeLogoDiv {
+    width: auto;
+    height: auto;
     margin-left: 5%;
 }
 
-.carouselImage{
+.carouselImage {
     width: 100%;
     height: 100vh;
+    object-fit: cover;
+    /* Ensure images don't stretch */
 }
 
-.nav-item .LiNavLink:hover{
-    color: orangered;
+.nav-item .LiNavLink:hover {
+    color: var(--secondary-color);
+    transition: color 0.3s ease;
 }
 
-.ziffcodeLogo{
+.ziffcodeLogo {
     width: 100%;
     height: 100%;
 }
 
-.logoImage{
-    width: 4rem;
-    height: 4rem;
+.logoImage {
+    width: 2.5rem;
+    height: 2.5rem;
 }
 
-.ziffcodeDiv{
-    background-color: #120f0f;
+.ziffcodeDiv {
+    background-color: var(--background-dark);
 }
 
-.codingRemovebDiv{
+.codingRemovebDiv {
     width: 1.5rem;
     height: 1.5rem;
 }
-.ziffTechLtd{
-    font-weight: bold;
-    color: orangered;
-    background-color: #120f0f;
-    opacity: 75%;
+
+.ziffTechLtd {
+    font-weight: 700;
+    color: var(--secondary-color);
+    background-color: var(--background-dark);
     margin-top: 0;
+    font-family: 'Inter', sans-serif;
 }
 
-.LandingPageCarousel{
+.LandingPageCarousel {
     width: 100%;
     height: 100vh;
 }
 
-.LandingPageCarousel img{
-width: 100%;
-height: 100%;
-}
-.codingRemovebg1{
-    width: 2rem;
-    height: 2rem
+.LandingPageCarousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.trainingImageDiv{
+.codingRemovebg1 {
+    width: 2rem;
+    height: 2rem;
+}
+
+.trainingImageDiv {
     width: 100%;
     height: 80vh;
-    margin: 0 8% 0 0;
-    text-align: center;   
+    /* margin: 0 8% 0 0; Removed weird margin */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-card);
 }
 
-.training{
+.training {
     width: 85%;
-    height: 100%;
+    height: auto;
+    max-height: 100%;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
 }
 
 
-.w-100{
-    background-color: rgb(18, 47, 98);
-    color: goldenrod;
+.w-100 {
+    background-color: var(--primary-dark);
+    color: var(--secondary-color);
 }
 
-.footerLogo{
+.footerLogo {
     width: 10rem;
     height: 4rem;
 }
 
-.messageDiv{
-    width: 83%;
-    margin: auto;
-    padding-bottom: 3%;
-} 
+.messageDiv {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: var(--spacing-lg);
+}
 
-.ourServicesEmpowers{
+.ourServicesEmpowers {
     width: 100%;
-    height: 55vh;
-    background-color: rgb(4, 26, 4);
-    color: white;
+    padding: var(--spacing-xl) var(--spacing-md);
+    background: linear-gradient(135deg, var(--background-dark) 0%, var(--primary-dark) 100%);
+    color: var(--text-main);
     text-align: center;
-    padding: 10%;
-    margin: auto;
-    animation: ServicesEmpowers 10s linear infinite; 
+    position: relative;
+    overflow: hidden;
 }
 
-@keyframes ServicesEmpowers {
-  0%   {background-color: rgb(35, 4, 29);}
-  25%  {background-color: rgb(58, 58, 5);}
-  50%  {background-color: rgb(6, 6, 77);}
-  100% {background-color: rgb(8, 47, 8);}
-}
+/* Removed old keyframe animation for a cleaner gradient */
 
-.kidsIntheClass{
-    width: 100vh;
+.kidsIntheClass {
+    width: 100%;
     height: 100vh;
+    object-fit: cover;
 }
 
-.theboysPrac{
+.theboysPrac {
     width: 100%;
     height: 38vh;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
 }
 
-.footerComp{
-    height: 100vh;
+.footerComp {
+    min-height: 50vh;
+    /* Changed from fixed 100vh to fit content */
+    background-color: var(--background-dark);
+    color: var(--text-muted);
 }
 
-.digitalImg{
+.digitalImg {
     width: 100%;
     height: 9rem;
+    overflow: hidden;
 }
 
-.digitalMktImage{
+.digitalMktImage {
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }

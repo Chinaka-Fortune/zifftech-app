@@ -1,0 +1,77 @@
+/* Main Container */
+.contact-us-container {
+    padding-top: 6rem;
+    /* Space for fixed navbar */
+    min-height: 100vh;
+    background-color: var(--background-dark);
+    color: var(--text-main);
+}
+
+.section-title {
+    color: var(--primary-light);
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+/* Info Column Styles */
+.contact-card {
+    background-color: var(--background-card);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.info-item h5 {
+    color: var(--text-main);
+}
+
+.text-muted-light {
+    color: var(--text-muted);
+}
+
+.map-placeholder {
+    height: 200px;
+    width: 100%;
+    margin-top: 2rem;
+    overflow: hidden;
+    border-radius: var(--radius-sm);
+}
+
+/* Form Column Styles */
+.form-card {
+    background-color: var(--background-card);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.form-label {
+    color: var(--text-main);
+}
+
+.form-control {
+    background-color: var(--background-dark);
+    border: 1px solid #2d3748;
+    color: var(--text-main);
+    padding: 0.75rem 1rem;
+}
+
+.form-control:focus {
+    background-color: var(--background-dark);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(37, 99, 235, 0.25);
+    color: var(--text-main);
+}
+
+.form-control,
+.form-control::placeholder {
+    color: var(--text-muted);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contact-us-container {
+        padding-top: 5rem;
+    }
+}

@@ -12,7 +12,7 @@ const LogIn = () => {
     }
 
     const handleSubmit = (event) => {
-        event.preventDefaul();
+        event.preventDefault();
         alert(inputs)
     }
     return (

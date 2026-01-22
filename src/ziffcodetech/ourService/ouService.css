@@ -1,6 +1,2 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    /* background-color: #120f0f; */
-}
+/* Global reset is now in index.css */
+/* Add specific service component styles here if needed */
