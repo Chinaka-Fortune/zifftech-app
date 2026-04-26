@@ -4,32 +4,40 @@ import { NavLink } from "react-router-dom";
 
 const WhatWeDo = () => {
     return (
-        <div className="container-fliud">
-            <h3 className="fs-3 fw-bolder ms-5 ps-5 p-3">What We Do</h3>
+        <div className="container-fluid pt-4 pb-2 bg-white">
+            <div className="px-lg-5 mb-4">
+                <div className="ps-4 border-start border-4 mb-3" style={{ borderColor: "var(--secondary-color) !important" }}>
+                    <h2 className="display-5 fw-black m-0" style={{ color: "var(--primary-dark)" }}>What We Do</h2>
+                    <div className="mt-2" style={{ width: "60px", height: "3px", backgroundColor: "var(--secondary-color)" }}></div>
+                </div>
+            </div>
             
-            <figure className="trainingImageDiv">
-                <img src={training} className="training" alt="training" style={{objectFit:'cover', objectPosition:'center'}}/>
-            </figure>
-            <div class="text-start px-3 px-lg-5">
-                <div class="row mt-4 row-gap-3">
-                    <div class="col-md-6 px-md-5">
-                        <h4>Ziffcode Training</h4>
-                        <p className="fw-light">
-                        Ziffcode Technology drills you through our intensive practical training program that will usher you into a new generation of indigenous tech professionals driving innovation and development in the tech industry. If you are searching for insturctors who will train you in quality and intensive coding, search no further. Through our qualified and passionate training, WE ARE THE BEST THAT WILL MAKE YOU ONE OF THE BEST IN THE WORLD.
-                        These services include mobile and web development, cybersecurity, data science and analysis, digital marketing and more.
-                        </p>
-                        <NavLink to="/logIn" type="submit" className="text-primary  text-decoration-none" >Enroll Here<i className="bi bi-arrow-right-circle-fill ms-2"></i></NavLink>
+            <div className="px-lg-5">
+                <figure className="trainingImageDiv rounded-4 overflow-hidden mb-4 shadow-lg">
+                    <img src={training} className="training w-100" alt="training" style={{ height: "450px", objectFit:'cover', objectPosition:'center'}}/>
+                </figure>
+                
+                <div class="row row-gap-4">
+                    <div class="col-md-6 mb-2">
+                        <div className="p-4 p-lg-5 h-100 rounded-4 shadow-sm border-top border-4 bg-light" style={{ borderColor: "var(--primary-color) !important" }}>
+                            <h3 className="fw-black mb-4" style={{ color: "var(--primary-dark)" }}>Ziffcode Training</h3>
+                            <p className="fs-5 text-dark mb-4" style={{ lineHeight: "1.8" }}>
+                                Ziffcode Technology drills you through our intensive practical training program that will usher you into a new generation of tech professionals. If you are searching for quality and intensive coding, search no further. WE ARE THE BEST THAT WILL MAKE YOU ONE OF THE BEST IN THE WORLD.
+                            </p>
+                            <NavLink to="/logIn" className="btn btn-primary px-4 py-2 fw-bold rounded-pill">Enroll Here<i className="bi bi-arrow-right-circle-fill ms-2"></i></NavLink>
+                        </div>
                     </div>
-                    <div class="col-md-6 px-md-5">
-                        <h4>Talent Outsourcing</h4>
-                        <p className="fw-light">We are solution providers, we use the power of innovation and intensive skills to grow your business online and offline, and make your daily life easy, convinient and effective with high quality software solutions. This services include developing highly responsive website, Mobile App,
-                        </p>
-                        <NavLink to="/formComp" type="submit" className="text-primary  text-decoration-none" >Hire a Tech-savvy<i className="bi bi-arrow-right-circle-fill ms-2"></i></NavLink>
+                    <div class="col-md-6 mb-2">
+                        <div className="p-4 p-lg-5 h-100 rounded-4 shadow-sm border-top border-4 bg-light" style={{ borderColor: "var(--secondary-color) !important" }}>
+                            <h3 className="fw-black mb-4" style={{ color: "var(--primary-dark)" }}>Talent Outsourcing</h3>
+                            <p className="fs-5 text-dark mb-4" style={{ lineHeight: "1.8" }}>
+                                We use the power of innovation and intensive skills to grow your business online and offline, making your daily life easy, convenient and effective with high-quality software solutions including Web and Mobile development.
+                            </p>
+                            <NavLink to="/contact" className="btn btn-outline-primary px-4 py-2 fw-bold rounded-pill">Hire a Tech-savvy<i className="bi bi-person-check-fill ms-2"></i></NavLink>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            
         </div>
     )
 }

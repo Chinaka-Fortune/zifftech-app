@@ -1,52 +1,47 @@
 import React from "react";
 
 const Products = () => {
-    return (
-        <div className="container-fluid mt-3">
-            <div className="w-100 p-5  text-center fs-4 rounded-3">
-                <p>Develop your career</p>
-                <p>Develop your coding skills</p>
-                <p className="text-centet">Coding Today, Empowering Tommorow</p>
-            </div>
-            <div class="row mt-4 d-flex">
-                <div className="d-flex flex-wrap row-gap-5 justify-content-evenly">
-                    <div class="col-sm-5">
-                        <div class="card shadow">
-                            <div class="card-body">
-                                <h5 class="card-title text-center">Mentorship</h5>
-                                <p class="card-text text-center p-3 pb-5">Build a strong foundation in tech programs structured with diverse and brilliant mentors that will take your skills to the next level with expert-led courses put all their efforts and skills into positively influencing, shaping and helping you bring your dream to reality.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-5 ">
-                        <div class="card shadow">
-                            <div class="card-body">
-                                <h5 class="card-title text-center">Internship</h5>
-                                <p class="card-text text-center p-3 pb-5">We provide comprehensive internship programs encompassing diverse courses, including but not limited to UI/UX, backend development (.NET, C#, Node.js), frontend development, full stack development, mobile software development (Flutter, Dart, React Native), and blockchain technology.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+    const productCards = [
+        { title: "Mentorship", desc: "Build a strong foundation in tech programs structured with brilliant mentors that will take your skills to the next level with expert-led courses." },
+        { title: "Internship", desc: "Comprehensive programs encompassing UI/UX, Backend (Flask, Node.js), Frontend, Mobile (React Native, Flutter), and Blockchain technology." },
+        { title: "Portfolio", desc: "Engage in independent projects while facilitating internships with esteemed organizations to build an impressive professional portfolio." },
+        { title: "Certification", desc: "Upon completion, earn an industry-recognized certificate solidifying your expertise and enhancing your credibility in the tech world." }
+    ];
 
-                    <div class="col-sm-5">
-                        <div class="card shadow">
-                            <div class="card-body">
-                                <h5 class="card-title text-center p-3">Portfolio</h5>
-                                <p class="card-text text-center">During the duration of the internship program, our exquisited crafted courses offers you the opportunity to engage in independent projects while facilitating internships with esteemed organizations. This invaluable experience not only enhances your skills and capabilities but also contributes to the development of an impressive professional portfolio.
-                                </p>
-                            </div>
+    return (
+        <div className="container-fluid pt-4 pb-2 bg-white">
+            <div className="w-100 p-5 text-center bg-light rounded-4 mb-4 border-start border-end border-5" style={{ borderColor: "var(--primary-color) !important" }}>
+                <h2 className="fw-black" style={{ color: "var(--primary-dark)" }}>Develop Your Career</h2>
+                <h4 className="fw-bold" style={{ color: "var(--secondary-color)" }}>Develop Your Coding Skills</h4>
+                <p className="fs-5 mt-3 text-muted">Coding Today, Empowering Tomorrow</p>
+            </div>
+            
+            <div className="row justify-content-center gap-4">
+                {productCards.map((card, idx) => (
+                    <div key={idx} className="col-lg-2 col-md-5 col-11 p-0 rounded-4 bg-white d-flex flex-column overflow-hidden transition-all"
+                         style={{ 
+                           transition: "all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1)",
+                           cursor: "pointer",
+                           minWidth: "280px",
+                           border: "none",
+                           borderTop: `5px solid ${idx % 2 === 0 ? "var(--primary-color)" : "var(--secondary-color)"}`,
+                           borderBottom: `2px solid ${idx % 2 === 0 ? "var(--primary-color)" : "var(--secondary-color)"}`,
+                           boxShadow: "0 10px 30px -10px rgba(0,0,0,0.12)"
+                         }}
+                         onMouseEnter={(e) => {
+                           e.currentTarget.style.transform = "translateY(-10px)";
+                           e.currentTarget.style.boxShadow = "0 25px 50px -12px rgba(64,105,179,0.2)";
+                         }}
+                         onMouseLeave={(e) => {
+                           e.currentTarget.style.transform = "translateY(0)";
+                           e.currentTarget.style.boxShadow = "0 10px 30px -10px rgba(0,0,0,0.12)";
+                         }}>
+                        <div className="p-4 d-flex flex-column h-100">
+                            <h4 className="fw-black mb-3 text-center" style={{ color: "var(--primary-dark)" }}>{card.title}</h4>
+                            <p className="text-center fw-medium mt-2" style={{ color: "#2d3748", lineHeight: "1.7", fontSize: "0.95rem" }}>{card.desc}</p>
                         </div>
                     </div>
-                    <div class="col-sm-5 ">
-                        <div class="card shadow">
-                            <div class="card-body">
-                                <h5 class="card-title text-center mb-0 ">Certification</h5>
-                                <p class="card-text mb-3 text-center p-3">Upon successful completion of the program, you will be awarded an industry-recognized certificate that serves as a testament to your exceptional skills and dedication to continual professional growth. This certificate stands as a valuable asset, solidifying your expertise and enhancing your credibility within the industry that you can share with your </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                ))}
             </div>
         </div>
     )

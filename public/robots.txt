@@ -1,3 +1,14 @@
-# https://www.robotstxt.org/robotstxt.html
+# Ziffcode Technologies Limited - Robots.txt
+# Empowering Innovation through elite Software Development and Training
+
 User-agent: *
-Disallow:
+Allow: /
+
+# Disallow admin and dashboard areas to focus crawler budget on public content
+Disallow: /admin
+Disallow: /dashboard
+Disallow: /staff-dashboard
+Disallow: /live/*
+
+# Sitemap link for easier discovery
+Sitemap: https://ziffcode.com.ng/sitemap.xml

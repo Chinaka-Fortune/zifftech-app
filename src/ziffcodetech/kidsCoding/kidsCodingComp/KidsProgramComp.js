@@ -7,53 +7,117 @@ import { NavLink } from "react-router-dom";
 
 const KidsProgramComp = () => {
   return (
-    <div className="container-fluid text-start mb-3 mx-auto mt-3">
-      <div className="row m-auto  px-md-3 row-gap-4 ">
-        <div className="col-lg-4 col-sm-6 cardBodyMorphoric">
-          <figure className="">
-            <img src={theboysPrac} className="theboysPrac" alt="theboysPrac" />
-          </figure>
-          <p className="boldText">Ages 8-10 (Elementary School):</p>
-          <p className="mb-0"><span className="boldText">Creativity: </span>Coding encourages creativity as children experiment with different ways to achieve their desired outcomes in games and animations.</p>
-          <p className="mb-0"><span className="boldText">Improved Problem-Solving Skills: </span>Young children learn to break down problems into manageable parts, enhancing their analytical thinking.</p>
-          <ul className="pb-0">
-            <li>Build apps, games, and websites</li>
-            <li>Master coding skills</li>
-            <li>Engage in project-based learning</li>
-            <li>Earn coding certificate</li>
-            <NavLink to="/formComp" type="submit" className="mt-3 bg-primary rounded text-white fw-bold p-2 text-decoration-none px-4" >Enroll now</NavLink>
-          </ul>
+    <div className="container-fluid py-5 bg-white">
+      <div className="text-center mb-5">
+        <h1 className="display-4 fw-black mb-3" style={{ color: "var(--primary-dark)" }}>Kids Coding Programs</h1>
+        <div className="mx-auto" style={{ width: "80px", height: "4px", backgroundColor: "var(--secondary-color)" }}></div>
+      </div>
+
+      <div className="row justify-content-center gap-4 px-md-3">
+        {/* Ages 8-10 */}
+        <div className="col-lg-3 col-md-5 col-11 p-0 rounded-4 bg-white d-flex flex-column overflow-hidden transition-all"
+             style={{ 
+               transition: "all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1)",
+               cursor: "pointer",
+               boxShadow: "0 12px 40px -15px rgba(0,0,0,0.12)",
+               borderTop: "5px solid var(--secondary-color)",
+               borderBottom: "3px solid var(--primary-color)"
+             }}
+             onMouseEnter={(e) => {
+               e.currentTarget.style.transform = "translateY(-15px)";
+               e.currentTarget.style.boxShadow = "0 35px 70px -15px rgba(64,105,179,0.2)";
+             }}
+             onMouseLeave={(e) => {
+               e.currentTarget.style.transform = "translateY(0)";
+               e.currentTarget.style.boxShadow = "0 12px 40px -15px rgba(0,0,0,0.12)";
+             }}>
+          <div className="w-100 overflow-hidden" style={{ height: "220px" }}>
+            <img src={theboysPrac} className="w-100 h-100 object-fit-cover transition-all" alt="Elementary School Coding" 
+                 style={{ transition: "transform 0.5s ease" }} />
+          </div>
+          <div className="p-4 d-flex flex-column h-100">
+            <h4 className="fw-black mb-3" style={{ color: "var(--primary-dark)" }}>Ages 8-10</h4>
+            <div className="mb-4">
+              <p className="mb-2" style={{ color: "#2d3748" }}><span className="fw-bold text-primary">Creativity: </span>Encourages experimentation in games and animations.</p>
+              <p className="mb-0" style={{ color: "#2d3748" }}><span className="fw-bold text-primary">Problem-Solving: </span>Teaches analytical thinking through project breakdown.</p>
+            </div>
+            <ul className="ps-3 mb-4 text-dark opacity-90" style={{ fontSize: "0.95rem" }}>
+              <li className="mb-1">Build apps, games, and websites</li>
+              <li className="mb-1">Master foundational skills</li>
+              <li className="mb-1">Earn coding certificate</li>
+            </ul>
+            <NavLink to="/signup" className="btn btn-primary w-100 fw-bold py-2 mt-auto">Enroll Now</NavLink>
+          </div>
         </div>
 
-        <div className="col-lg-4 col-sm-6 cardBodyMorphoric p-3 ">
-          <figure>
-            <img src={blackBoyTwo} className="blackBoyTwo" alt="blackBoyTwo" />
-          </figure>
-          <p className="boldText">Ages 11-13 (Middle School)</p>
-          <p className="mb-0"><span className="boldText">Advanced Problem-Solving: </span>As coding projects become more complex, students develop higher-order problem-solving skills and resilience.</p>
-          <p className="mb-0"><span className="boldText">Collaboration: </span>Group projects and coding clubs foster teamwork and collaborative skills.</p>
-          <ul className="mt-0 mb-0">
-            <li>Learn to code like a pro</li>
-            <li>Create amazing apps, games and websites</li>
-            <li>Earn coding certificate</li>
-            <li>Master problem solving skills</li>
-            <NavLink to="/formComp" type="submit" className="mt-3 bg-primary rounded text-white fw-bold p-2 text-decoration-none px-4" >Enroll now</NavLink>
-          </ul>
+        {/* Ages 11-13 */}
+        <div className="col-lg-3 col-md-5 col-11 p-0 rounded-4 bg-white d-flex flex-column overflow-hidden transition-all"
+             style={{ 
+               transition: "all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1)",
+               cursor: "pointer",
+               boxShadow: "0 12px 40px -15px rgba(0,0,0,0.12)",
+               borderTop: "5px solid var(--primary-color)",
+               borderBottom: "3px solid var(--primary-color)"
+             }}
+             onMouseEnter={(e) => {
+               e.currentTarget.style.transform = "translateY(-15px)";
+               e.currentTarget.style.boxShadow = "0 35px 70px -15px rgba(64,105,179,0.2)";
+             }}
+             onMouseLeave={(e) => {
+               e.currentTarget.style.transform = "translateY(0)";
+               e.currentTarget.style.boxShadow = "0 12px 40px -15px rgba(0,0,0,0.12)";
+             }}>
+          <div className="w-100 overflow-hidden" style={{ height: "220px" }}>
+            <img src={blackBoyTwo} className="w-100 h-100 object-fit-cover transition-all" alt="Middle School Coding" />
+          </div>
+          <div className="p-4 d-flex flex-column h-100">
+            <h4 className="fw-black mb-3" style={{ color: "var(--primary-dark)" }}>Ages 11-13</h4>
+            <div className="mb-4">
+              <p className="mb-2" style={{ color: "#2d3748" }}><span className="fw-bold text-primary">Advanced Logic: </span>Develops higher-order resilience and complex logic.</p>
+              <p className="mb-0" style={{ color: "#2d3748" }}><span className="fw-bold text-primary">Collaboration: </span>Fosters teamwork through group coding clubs.</p>
+            </div>
+            <ul className="ps-3 mb-4 text-dark opacity-90" style={{ fontSize: "0.95rem" }}>
+              <li className="mb-1">Code like a professional</li>
+              <li className="mb-1">Master problem solving</li>
+              <li className="mb-1">Earn coding certificate</li>
+            </ul>
+            <NavLink to="/signup" className="btn btn-primary w-100 fw-bold py-2 mt-auto">Enroll Now</NavLink>
+          </div>
         </div>
-        <div class="col-lg-4 col-sm-6 cardBodyMorphoric p-2 pb-0 ps-3">
-          <figure>
-            <img src={teenageCoding} className="teenageCoding" alt="teenageCoding" />
-          </figure>
-          <p className="boldText">Ages 14-16 (High School)</p>
-          <p className="mb-0"><span className="boldText">Abstract Thinking: </span>Coding requires abstract thinking, which is crucial for understanding advanced topics in both computer science and other academic subjects.</p>
-          <p className="mb-0"><span className="boldText">Complex Project Manage-ment: </span>Older students are learning project manage- ment and time management skills.</p>
-          {/* <p className="ps-2">Complex Project Management: Older students can handle larger projects, learning project management and time management skills.</p> */}
-          <ul className="mb-3">
-            <li>Kick start your coding journey</li>
-            <li>Build amazing apps, games and websites</li>
-            <li>Unlock Problem solving superpower</li>
-            <NavLink to="/formComp" type="submit" className="mt-3 bg-primary rounded text-white fw-bold p-2 text-decoration-none px-4" >Enroll now</NavLink>
-          </ul>
+
+        {/* Ages 14-16 */}
+        <div className="col-lg-3 col-md-5 col-11 p-0 rounded-4 bg-white d-flex flex-column overflow-hidden transition-all"
+             style={{ 
+               transition: "all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1)",
+               cursor: "pointer",
+               boxShadow: "0 12px 40px -15px rgba(0,0,0,0.12)",
+               borderTop: "5px solid var(--secondary-color)",
+               borderBottom: "3px solid var(--primary-color)"
+             }}
+             onMouseEnter={(e) => {
+               e.currentTarget.style.transform = "translateY(-15px)";
+               e.currentTarget.style.boxShadow = "0 35px 70px -15px rgba(64,105,179,0.2)";
+             }}
+             onMouseLeave={(e) => {
+               e.currentTarget.style.transform = "translateY(0)";
+               e.currentTarget.style.boxShadow = "0 12px 40px -15px rgba(0,0,0,0.12)";
+             }}>
+          <div className="w-100 overflow-hidden" style={{ height: "220px" }}>
+            <img src={teenageCoding} className="w-100 h-100 object-fit-cover transition-all" alt="High School Coding" />
+          </div>
+          <div className="p-4 d-flex flex-column h-100">
+            <h4 className="fw-black mb-3" style={{ color: "var(--primary-dark)" }}>Ages 14-16</h4>
+            <div className="mb-4">
+              <p className="mb-2" style={{ color: "#2d3748" }}><span className="fw-bold text-primary">Abstract Thinking: </span>Crucial for understanding computer science at scale.</p>
+              <p className="mb-0" style={{ color: "#2d3748" }}><span className="fw-bold text-primary">Project Management: </span>Handling larger architectures and time management.</p>
+            </div>
+            <ul className="ps-3 mb-4 text-dark opacity-90" style={{ fontSize: "0.95rem" }}>
+              <li className="mb-1">Kick-start your career journey</li>
+              <li className="mb-1">Build amazing enterprise apps</li>
+              <li className="mb-1">Unlock solving superpowers</li>
+            </ul>
+            <NavLink to="/signup" className="btn btn-primary w-100 fw-bold py-2 mt-auto">Enroll Now</NavLink>
+          </div>
         </div>
       </div>
     </div>

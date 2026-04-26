@@ -1,14 +1,33 @@
 import React from "react";
 
 const ChooseUsComp = () =>{
+    const reasons = [
+        { label: "Expert Team", text: "Highly skilled professionals with extensive experience and a passion for technology.", color: "var(--primary-color)" },
+        { label: "Client-Centric", text: "Prioritizing your needs and working closely to understand and achieve your goals.", color: "var(--secondary-color)" },
+        { label: "Innovation", text: "Embracing the cutting edge to deliver high-quality solutions that exceed expectations.", color: "var(--primary-color)" },
+        { label: "Comprehensive", text: "Integrated approach covering design, development, marketing, and data analytics.", color: "var(--secondary-color)" }
+    ];
+
     return(
-        <div className="container-fliud px-3 mx-lg-5 mt-5">
-            <div className="col-md-9">
-                <h3 className="text-center fw-bolder">Why choose us?</h3>
-            <p><span className="boldText">Expert Team:</span> Our team comprises highly skilled professionals with extensive experience in their respective fields. We are passionate about technology and dedicated to continuous learning and improvement.</p>
-            <p><span className="boldText">Client-Centric Approach:</span> We prioritize our clients' needs and work closely with them to understand their goals. Our solutions are tailored to meet specific requirements, ensuring maximum satisfaction.</p>
-            <p><span className="boldText">Innovation and Quality:</span> We embrace innovation and are committed to delivering high-quality solutions that exceed expectations. Our meticulous attention to detail ensures every project is a success.</p>
-            <p><span className="boldText">Comprehensive Services: </span>Comprehensive Services: From development and design to marketing and data analysis, we offer a wide range of services under one roof. This integrated approach ensures consistency and efficiency in all our projects.</p>
+        <div className="container-fluid pt-5 pb-4 px-lg-5 bg-white" style={{ marginBottom: "-1px" }}>
+            <div className="row justify-content-center m-0 p-0">
+                <div className="col-lg-10 mb-0 pb-0">
+                    <div className="text-center mb-4">
+                         <h2 className="display-4 fw-black mb-3" style={{ color: "var(--primary-dark)" }}>Why Choose Us?</h2>
+                         <div className="mx-auto" style={{ width: "60px", height: "4px", backgroundColor: "var(--primary-color)" }}></div>
+                    </div>
+                    
+                    <div className="row justify-content-center g-4 mb-0 pb-0">
+                        {reasons.map((reason, idx) => (
+                            <div key={idx} className="col-md-5">
+                                <div className="p-4 h-100 rounded-4 shadow-sm border-start border-4 bg-light" style={{ borderColor: `${reason.color} !important` }}>
+                                    <h5 className="fw-black mb-2" style={{ color: "var(--primary-dark)" }}>{reason.label}</h5>
+                                    <p className="mb-0 text-dark" style={{ lineHeight: "1.7" }}>{reason.text}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
             </div>
         </div>
     )
