@@ -7,7 +7,7 @@ import ActivityFeed from './ActivityFeed';
 import AccountSettings from './AccountSettings';
 import SkillProficiency from './SkillProficiency';
 import StudentView from './StudentView';
-import { showError, showSuccess, showConfirm } from '../../utils/sweetAlert';
+import { showError, showConfirm } from '../../utils/sweetAlert';
 import { currencies } from '../../utils/currencies';
 
 const StaffDashboard = () => {
@@ -27,10 +27,8 @@ const StaffDashboard = () => {
     const [searchQuery, setSearchQuery] = useState("");
     const [activeModal, setActiveModal] = useState(null);
     const [modalData, setModalData] = useState({ title: '', content: '', courseId: null });
-    const [suggestedCurrency, setSuggestedCurrency] = useState('USD');
     const [selectedCurrency, setSelectedCurrency] = useState('USD');
     const [selectedGateway, setSelectedGateway] = useState('paystack');
-    const [currencySearch, setCurrencySearch] = useState('');
 
     const fetchAllData = useCallback(async () => {
         try {
@@ -63,7 +61,6 @@ const StaffDashboard = () => {
             // Fetch currency
             try {
                 const resCurr = await axiosInstance.get('/payments/suggested-currency');
-                setSuggestedCurrency(resCurr.data.currency);
                 setSelectedCurrency(resCurr.data.currency);
             } catch (currErr) { console.error("Currency error", currErr); }
 
@@ -77,7 +74,7 @@ const StaffDashboard = () => {
         } finally {
             setLoading(false);
         }
-    }, [navigate]);
+    }, []);
 
     useEffect(() => {
         fetchAllData();

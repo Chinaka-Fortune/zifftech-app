@@ -1,14 +1,12 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import axiosInstance from '../../api/axios';
 import { useNavigate } from 'react-router-dom';
-import MessagingHub from './MessagingHub';
 import GlobalHub from './GlobalHub';
 import ActivityFeed from './ActivityFeed';
 import AccountSettings from './AccountSettings';
 import SkillProficiency from './SkillProficiency';
 import StudentView from './StudentView';
-import { showError, showSuccess, showConfirm } from '../../utils/sweetAlert';
-import { currencies } from '../../utils/currencies';
+import { showError, showConfirm } from '../../utils/sweetAlert';
 
 const AdminDashboard = () => {
     const [user, setUser] = useState(null);
@@ -27,9 +25,6 @@ const AdminDashboard = () => {
     const [searchQuery, setSearchQuery] = useState("");
     const [activeModal, setActiveModal] = useState(null);
     const [modalData, setModalData] = useState({ title: '', content: '', courseId: null });
-    const [suggestedCurrency, setSuggestedCurrency] = useState('USD');
-    const [selectedCurrency, setSelectedCurrency] = useState('USD');
-    const [selectedGateway, setSelectedGateway] = useState('paystack');
 
     const fetchAdminData = useCallback(async () => {
         try {
@@ -54,9 +49,7 @@ const AdminDashboard = () => {
             setProjects(resStudent.data.projects);
 
             try {
-                const resCurr = await axiosInstance.get('/payments/suggested-currency');
-                setSuggestedCurrency(resCurr.data.currency);
-                setSelectedCurrency(resCurr.data.currency);
+                await axiosInstance.get('/payments/suggested-currency');
             } catch (currErr) { console.error("Currency error", currErr); }
 
         } catch (err) {
@@ -69,7 +62,7 @@ const AdminDashboard = () => {
         } finally {
             setLoading(false);
         }
-    }, [navigate]);
+    }, []);
 
     useEffect(() => {
         fetchAdminData();
@@ -127,16 +120,6 @@ const AdminDashboard = () => {
         } catch (err) { showError("Error", "Failed to update status"); }
     };
 
-    const handleAddProject = async () => {
-        if (!modalData.title.trim()) return;
-        try {
-            const res = await axiosInstance.post('/projects/', { title: modalData.title, description: "New admin project." });
-            setProjects(prev => [...prev, res.data.project]);
-            setActiveModal(null);
-            setModalData({ title: '', content: '' });
-        } catch (err) { showError("Error", "Failed to create project"); }
-    };
-
     const handleDeleteProject = async (id) => {
         const confirmed = await showConfirm("Delete?", "Are you sure?");
         if (!confirmed.isConfirmed) return;
@@ -156,15 +139,6 @@ const AdminDashboard = () => {
     const handlePayment = (courseId) => {
         setModalData({ ...modalData, courseId });
         setActiveModal('payment');
-    };
-
-    const executePayment = async () => {
-        try {
-            const res = await axiosInstance.post('/payments/checkout', {
-                course_id: modalData.courseId, gateway: selectedGateway, currency: selectedCurrency
-            });
-            if (res.data.checkout_url) window.location.href = res.data.checkout_url;
-        } catch (err) { showError("Checkout Failed", err.message); }
     };
 
     if (error) {
@@ -247,9 +221,9 @@ const AdminDashboard = () => {
                                 <h6 className="fw-bold mb-0">{user.name}</h6>
                                 <small className="text-primary text-uppercase fw-bold" style={{ fontSize: '0.7rem' }}>Administrator</small>
                              </div>
-                             <div className="cursor-pointer rounded-circle bg-primary text-white d-center fw-bold" style={{ width: '45px', height: '45px' }} onClick={() => setActiveTab('settings')}>
-                                {user.avatar_url ? <img src={user.avatar_url} className="rounded-circle" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /> : user.name[0]}
-                             </div>
+                              <div className="cursor-pointer rounded-circle bg-primary text-white d-center fw-bold" style={{ width: '45px', height: '45px' }} onClick={() => setActiveTab('settings')}>
+                                 {user.avatar_url ? <img src={user.avatar_url} alt="Profile" className="rounded-circle" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /> : user.name[0]}
+                              </div>
                         </div>
                     </div>
 

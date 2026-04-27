@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import StudentView from './StudentView';
 import GlobalHub from './GlobalHub';
 import MessagingHub from './MessagingHub';
-import ActivityFeed from './ActivityFeed';
 import AccountSettings from './AccountSettings';
 import { showError, showSuccess, showConfirm } from '../../utils/sweetAlert';
 import { currencies } from '../../utils/currencies';
@@ -152,10 +151,6 @@ const StudentDashboard = () => {
         <div className="text-center min-vh-100 d-flex justify-content-center align-items-center bg-light">
             <div className="spinner-border" style={{ color: "var(--primary-color)" }} role="status"></div>
         </div>
-    );
-
-    const filteredEnrollments = enrollments.filter(enr => 
-        enr.course_title?.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
     const lastEnrollment = enrollments.find(e => e.payment_status === 'paid') || enrollments[0];
