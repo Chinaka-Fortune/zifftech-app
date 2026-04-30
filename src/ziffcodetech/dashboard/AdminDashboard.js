@@ -213,8 +213,8 @@ const AdminDashboard = () => {
                     </ul>
                 </div>
 
-                {/* Main Content */}
-                <div className="col-md-10 p-4 p-md-5 bg-light" style={{ paddingBottom: '250px' }}>
+                {/* Main Content Area */}
+                <div className="col-md-10 p-4 p-md-5 bg-light">
                     {/* Top Bar */}
                     <div className="mb-5 d-flex justify-content-between align-items-center">
                         <div className="input-group bg-white rounded-pill shadow-sm px-3 py-1" style={{ maxWidth: '400px' }}>

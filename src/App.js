@@ -5,10 +5,9 @@ import OurService from "./ziffcodetech/ourService/OurService";
 import ZiffAcademy from "./ziffcodetech/ziffcodeTraining/ZiffAcademy";
 import KiddiesCoding from "./ziffcodetech/kidsCoding/KiddiesCoding";
 import NavBar from "./ziffcodetech/NavBar";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { HelmetProvider } from 'react-helmet-async';
 import FooterComp from "./ziffcodetech/FooterComp";
-// import FooterComp from "./ziffcodetech/FooterComp";
 import LogIn from "./ziffcodetech/formFolder/LogIn";
 import SignUp from "./ziffcodetech/formFolder/SignUp";
 import StudentDashboard from "./ziffcodetech/dashboard/StudentDashboard";
@@ -26,8 +25,9 @@ import ServicePortfolio from "./ziffcodetech/ourService/ourServiceComp/ServicePo
 import AllCoursesPage from "./ziffcodetech/ziffcodeTraining/AllCoursesPage";
 import ZiffieAI from "./ziffcodetech/dashboard/ZiffieAI";
 
-const App = () => {
+const AppContent = () => {
   const [isAuthenticated, setIsAuthenticated] = React.useState(!!localStorage.getItem('token'));
+  const location = useLocation();
 
   React.useEffect(() => {
     const handleAuthChange = () => setIsAuthenticated(!!localStorage.getItem('token'));
@@ -39,9 +39,10 @@ const App = () => {
     };
   }, []);
 
+  const isDashboard = ['/dashboard', '/staff-dashboard', '/admin'].some(path => location.pathname.startsWith(path));
+
   return (
-    <HelmetProvider>
-      <BrowserRouter>
+    <>
       <NavBar/>
       <Routes>
         <Route path="/" Component={Home}/>
@@ -64,11 +65,19 @@ const App = () => {
         <Route path="/contact" Component={ContactUs} />
         <Route path="/training" Component={ZiffAcademy} />
         <Route path="/all-courses" Component={AllCoursesPage} />
-        {/* <Route path="/training" Component={ZiffAcademy} /> */}
         <Route path="/kidsCoding" Component={KiddiesCoding} />
       </Routes >
       {isAuthenticated && <ZiffieAI />}
-      <FooterComp />
+      {!isDashboard && <FooterComp />}
+    </>
+  );
+};
+
+const App = () => {
+  return (
+    <HelmetProvider>
+      <BrowserRouter>
+        <AppContent />
       </BrowserRouter>
     </HelmetProvider>
   )

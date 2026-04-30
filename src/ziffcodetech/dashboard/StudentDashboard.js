@@ -255,7 +255,7 @@ const StudentDashboard = () => {
                 </div>
 
                 {/* Main Content Area */}
-                <div className="col-md-10 p-4 p-md-5 bg-light" style={{ paddingBottom: '150px' }}>
+                <div className="col-md-10 p-4 p-md-5 bg-light">
                     <div className="mb-5 d-flex justify-content-between align-items-center">
                         <div className="input-group bg-white rounded-pill shadow-sm px-3 py-1" style={{ maxWidth: '400px' }}>
                             <span className="input-group-text border-0 bg-transparent text-muted"><i className="bi bi-search"></i></span>
