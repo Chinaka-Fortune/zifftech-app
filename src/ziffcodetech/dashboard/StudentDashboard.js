@@ -5,6 +5,7 @@ import StudentView from './StudentView';
 import GlobalHub from './GlobalHub';
 import MessagingHub from './MessagingHub';
 import AccountSettings from './AccountSettings';
+import MeetingHub from './MeetingHub';
 import { showError, showSuccess, showConfirm } from '../../utils/sweetAlert';
 import { currencies } from '../../utils/currencies';
 
@@ -227,6 +228,13 @@ const StudentDashboard = () => {
                                 ✉️ Messaging
                             </button>
                         </li>
+                        <li className="nav-item">
+                            <button className={`nav-link border-0 text-start w-100 fw-bold px-3 py-2 rounded-3 hover-bg-light ${activeTab === 'meetings' ? 'bg-primary bg-opacity-10 text-primary' : 'text-muted'}`} 
+                                    style={{ backgroundColor: activeTab === 'meetings' ? "var(--primary-light)" : "transparent" }} 
+                                    onClick={() => setActiveTab('meetings')}>
+                                🎥 Live Mentorship
+                            </button>
+                        </li>
                     </ul>
                     <h6 className="text-uppercase text-muted fw-bold mb-4 mt-2" style={{ letterSpacing: "1px", fontSize: "0.85rem" }}>Account</h6>
                     <ul className="nav flex-column gap-2">
@@ -301,6 +309,7 @@ const StudentDashboard = () => {
 
                     {activeTab === 'hub' && <GlobalHub />}
                     {activeTab === 'messages' && <MessagingHub user={user} />}
+                    {activeTab === 'meetings' && <MeetingHub user={user} navigate={navigate} />}
                 </div>
             </div>
 

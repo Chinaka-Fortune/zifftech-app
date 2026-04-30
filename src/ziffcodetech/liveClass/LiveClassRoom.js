@@ -14,7 +14,7 @@ const LiveClassRoom = () => {
     useEffect(() => {
         const fetchToken = async () => {
             try {
-                const res = await axiosInstance.get(`/meetings/${roomName}/token`);
+                const res = await axiosInstance.get(`/meetings/join/${roomName}`);
                 setToken(res.data.token);
                 setAppId(res.data.app_id);
             } catch (err) {

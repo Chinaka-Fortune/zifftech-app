@@ -73,7 +73,7 @@ const FooterComp = () => {
                             <p className="mb-0 small" style={{ color: "var(--primary-dark)", opacity: 0.7 }}>&copy; {new Date().getFullYear()} Ziffcode Technologies. All rights reserved.</p>
                         </div>
                         <div className="col-md-6 text-center text-md-end">
-                            <p className="mb-0 small" style={{ color: "var(--primary-dark)", opacity: 0.7 }}>Designed by Ziffcode Team</p>
+                            <p className="mb-0 small" style={{ color: "var(--primary-dark)", opacity: 0.7 }}>Developed by Ziffcode Team</p>
                         </div>
                     </div>
                 </div>

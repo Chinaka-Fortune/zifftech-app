@@ -5,7 +5,7 @@ import OurService from "./ziffcodetech/ourService/OurService";
 import ZiffAcademy from "./ziffcodetech/ziffcodeTraining/ZiffAcademy";
 import KiddiesCoding from "./ziffcodetech/kidsCoding/KiddiesCoding";
 import NavBar from "./ziffcodetech/NavBar";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { HelmetProvider } from 'react-helmet-async';
 import FooterComp from "./ziffcodetech/FooterComp";
 // import FooterComp from "./ziffcodetech/FooterComp";
@@ -27,7 +27,17 @@ import AllCoursesPage from "./ziffcodetech/ziffcodeTraining/AllCoursesPage";
 import ZiffieAI from "./ziffcodetech/dashboard/ZiffieAI";
 
 const App = () => {
-  const isAuthenticated = !!localStorage.getItem('token');
+  const [isAuthenticated, setIsAuthenticated] = React.useState(!!localStorage.getItem('token'));
+
+  React.useEffect(() => {
+    const handleAuthChange = () => setIsAuthenticated(!!localStorage.getItem('token'));
+    window.addEventListener('authChange', handleAuthChange);
+    window.addEventListener('storage', handleAuthChange);
+    return () => {
+      window.removeEventListener('authChange', handleAuthChange);
+      window.removeEventListener('storage', handleAuthChange);
+    };
+  }, []);
 
   return (
     <HelmetProvider>
@@ -35,6 +45,7 @@ const App = () => {
       <NavBar/>
       <Routes>
         <Route path="/" Component={Home}/>
+        <Route path="/home" element={<Navigate to="/" replace />} />
         <Route path="/about" Component={AboutUs}/>
         <Route path="/logIn" Component={LogIn}/>
         <Route path="/signup" Component={SignUp}/>

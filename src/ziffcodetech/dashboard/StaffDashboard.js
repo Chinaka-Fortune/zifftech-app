@@ -3,6 +3,7 @@ import axiosInstance from '../../api/axios';
 import { useNavigate } from 'react-router-dom';
 import MessagingHub from './MessagingHub';
 import GlobalHub from './GlobalHub';
+import MeetingHub from './MeetingHub';
 import ActivityFeed from './ActivityFeed';
 import AccountSettings from './AccountSettings';
 import SkillProficiency from './SkillProficiency';
@@ -247,6 +248,10 @@ const StaffDashboard = () => {
                             <button className={`nav-link border-0 text-start w-100 fw-bold px-3 py-2 rounded-3 ${activeTab === 'inbox' ? 'bg-white bg-opacity-20 text-white' : 'text-white text-opacity-75'}`} 
                                     onClick={() => setActiveTab('inbox')}>✉️ Staff Inbox</button>
                         </li>
+                        <li className="nav-item">
+                            <button className={`nav-link border-0 text-start w-100 fw-bold px-3 py-2 rounded-3 hover-bg-light ${activeTab === 'meetings' ? 'bg-white bg-opacity-20 text-white' : 'text-white text-opacity-75'}`} 
+                                    onClick={() => setActiveTab('meetings')}>🎥 Live Mentorship</button>
+                        </li>
                     </ul>
 
                     <h6 className="text-uppercase text-white opacity-50 fw-bold mb-4 mt-2" style={{ letterSpacing: "1px", fontSize: "0.85rem" }}>Account</h6>
@@ -436,6 +441,7 @@ const StaffDashboard = () => {
 
                     {activeTab === 'hub' && <GlobalHub />}
                     {activeTab === 'inbox' && <MessagingHub user={user} />}
+                    {activeTab === 'meetings' && <MeetingHub user={user} navigate={navigate} />}
                     {activeTab === 'settings' && <AccountSettings user={user} setUser={setUser} />}
                 </div>
             </div>
