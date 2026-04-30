@@ -198,12 +198,13 @@ const StudentDashboard = () => {
             
             <div className="row g-0" style={{ minHeight: 'calc(100vh - 75px)', marginTop: '75px' }}>
                 {/* Left Sidebar Menu */}
-                <div className="col-md-2 d-none d-md-block bg-white shadow-sm p-4 pt-5" 
+                <div className="col-md-2 d-none d-md-block bg-white shadow-sm p-4 pt-5 custom-scrollbar" 
                      style={{ 
                          height: 'calc(100vh - 75px)', 
                          position: 'sticky', 
                          top: '75px', 
-                         zIndex: 1000
+                         zIndex: 1000,
+                         overflowY: 'auto'
                      }}>
                     <h6 className="text-uppercase text-muted fw-bold mb-4 mt-2" style={{ letterSpacing: "1px", fontSize: "0.85rem" }}>My Dashboard</h6>
                     <ul className="nav flex-column gap-2 mb-5">

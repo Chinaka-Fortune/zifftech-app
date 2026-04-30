@@ -211,8 +211,16 @@ const StaffDashboard = () => {
         <div className="container-fluid" style={{ backgroundColor: "#F8FAFD", minHeight: "100vh" }}>
             <div className="row g-0" style={{ minHeight: 'calc(100vh - 75px)', marginTop: '75px' }}>
                 {/* Left Sidebar Menu */}
-                <div className="col-md-2 d-none d-md-block bg-white shadow-sm p-4 pt-5" 
-                     style={{ height: 'calc(100vh - 75px)', position: 'sticky', top: '75px', zIndex: 1000, backgroundColor: 'var(--primary-dark) !important', color: 'white' }}>
+                <div className="col-md-2 d-none d-md-block shadow-sm p-4 pt-5 custom-scrollbar" 
+                     style={{ 
+                         height: 'calc(100vh - 75px)', 
+                         position: 'sticky', 
+                         top: '75px', 
+                         zIndex: 1000, 
+                         backgroundColor: 'var(--primary-dark)', 
+                         color: 'white',
+                         overflowY: 'auto'
+                     }}>
                     
                     <h6 className="text-uppercase text-white opacity-50 fw-bold mb-4 mt-2" style={{ letterSpacing: "1px", fontSize: "0.85rem" }}>Management Console</h6>
                     <ul className="nav flex-column gap-2 mb-5">
